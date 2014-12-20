@@ -2,50 +2,58 @@ This codebook is a re-work of the README.txt provided with the UCI HAR dataset. 
 
 ***********************************************
 
-Data Background:
+##Data Background:
 
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec
 ***********************************************
 
-Data transformations
+##Data transformations
 
 The project was to combine the testing and training datasets, tidy the data, then return a new dataset with the average of each variable for each activity and each subject. 
 
 The changes below are presented in a logical format, but the actual script processes these transformations in slightly different order to ensure the preservation of data
 
-change 1) the Y_train file is not an independent observation, but a variable in the tidy dataset. We moved the data in Y_train to a new column labeled "activity_type".
+#change 1)
+the Y_train file is not an independent observation, but a variable in the tidy dataset. We moved the data in Y_train to a new column labeled "activity_type".
 
-change 2) the "activity_type" column was an integer, but it represented an activity best described in words. Each number, 1:6 in activity_type was replaced with a character from the activity_labels.txt
+#change 2)
+the "activity_type" column was an integer, but it represented an activity best described in words. Each number, 1:6 in activity_type was replaced with a character from the activity_labels.txt
 
-change 3) the subject_train file is not an independent observation, but a variable in the tidy dataset. We moved the data into a new column named "subject"
+#change 3)
+the subject_train file is not an independent observation, but a variable in the tidy dataset. We moved the data into a new column named "subject"
 
-change 4) the  data column names were imported from features.txt and applied to the dataset. They were manipulated to make them more readable and more R friendly. They are currently a little large for printing.
+#change 4)
+the  data column names were imported from features.txt and applied to the dataset. They were manipulated to make them more readable and more R friendly. They are currently a little large for printing.
 
-change 5) repeat the above for the "test" dataset
+#change 5)
+repeat the above for the "test" dataset
 
-change 6) merge the "test" and "train" datasets
+#change 6)
+merge the "test" and "train" datasets
 
-change 7) extract only the columns that contain the mean or the standard deviation of a measurement.
+#change 7)
+extract only the columns that contain the mean or the standard deviation of a measurement.
 
-change 8) organize the data so the average for each variable is displayed, organized by each subject and each activity type. eg, show all average accelerations for subject 2 when walking, then all accelerations for subject 2 while standing etc. 
+#change 8)
+organize the data so the average for each variable is displayed, organized by each subject and each activity type. eg, show all average accelerations for subject 2 when walking, then all accelerations for subject 2 while standing etc. 
 
 ***********************************************
 
-variable description
+##variable description
 
 We will describe the first two variables in specific, then describe the remaining 79 variables algorithmically
 
- [1] "subject"      
+# [1] "subject"      
 
 "subject" is an integer variable (represented as a factor in R) ranges from 1:30 and represents an individual test subject from the original UCI testing. 
  
- [2] "activity_type"   
+# [2] "activity_type"   
 
 "activity_type" is a character variable (represented as a factor in R) that represents the type of activity being measured. It has 6 possible values: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING,
 
- [3:81] measurements
+# [3:81] measurements
 
 Each of the remaining 79 variables contain a unitless* mean of a measurement, in the following format:
 

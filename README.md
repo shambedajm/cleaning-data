@@ -1,6 +1,6 @@
 This readme file explains the run_analysis R script.
 The script and associated files were created as part of the Getting and Cleaning Data coursera class
-
+***********************************************
 
 ##1) Script purpose:
 
@@ -14,15 +14,14 @@ According to the course assignment the script performs the following tasks:
     3. Uses descriptive activity names to name the activities in the data set
     4. Appropriately labels the data set with descriptive variable names. 
     5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-         
+***********************************************        
 
 ##2) Script Requirements
 
 The UCI HAR dataset folder should be in the R working directory. This folder should be unmodified from the original source (see URL in the Script Purpose)
 
 The script requires the R package "dplyr" be available
-
-
+***********************************************
 
 ##3) Script usage
 
@@ -33,7 +32,7 @@ Note that the script is fairly slow while reading X_train.txt and X_test.txt, so
 run_analysis will return a 180x81 dataframe meeting the parameters in Script purpose
 
 No changes are made to the source data
-
+***********************************************
 
 ##4) Sample usage
 > source('run_analysis.R') 
