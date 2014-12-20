@@ -42,6 +42,7 @@ No changes are made to the source data
 
 ##4) Sample usage
 > source('run_analysis.R') 
+
 > result<-run_analysis()
 
             
