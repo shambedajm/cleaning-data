@@ -1,5 +1,6 @@
 run_analysis<-function(path="UCI HAR Dataset"){
     
+    #we use a few dplyr functions
     library(dplyr)
     
     #import activity lables     
@@ -62,20 +63,22 @@ run_analysis<-function(path="UCI HAR Dataset"){
     
     ###############################   
     #Task 4 - fix feature names to be more descriptive
-    features<-gsub("fBody","Freq_domain__Body_",features)
-    features<-gsub("tBody","Time_domain__Body_",features)
-    features<-gsub("tGravity","Time_domain_Gravity_",features)
-    features<-gsub("Acc","Acceleration_",features)
+    features<-gsub("fBody","Freq_Body_",features)
+    features<-gsub("tBody","Time_Body_",features)
+    features<-gsub("tGravity","Time_Gravity_",features)
+    features<-gsub("Acc","Acceleration",features)
     features<-gsub("-","_",features)
     features<-gsub("Body_Body","Body_",features)
     features<-gsub("\\(|\\)","",features)
-    
+    features<-gsub("_?Mag_meanFreq","_meanFreq_Mag",features)
+    features<-gsub("_?Mag_mean","_mean_Mag",features)
+    features<-gsub("_?Mag_std","_std_Mag",features)
     
     #apply features labels to data-sets
     colnames(X_train)<-features
     colnames(X_test)<-features
     
-    #add activity_type column
+    #Task 3 - add activity_type column
     test<-cbind(activity_type=Y_test, X_test)
     train<-cbind(activity_type=Y_train, X_train)
     
