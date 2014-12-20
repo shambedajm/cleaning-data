@@ -15,28 +15,28 @@ The project was to combine the testing and training datasets, tidy the data, the
 
 The changes below are presented in a logical format, but the actual script processes these transformations in slightly different order to ensure the preservation of data
 
-#change 1)
+###change 1)
 the Y_train file is not an independent observation, but a variable in the tidy dataset. We moved the data in Y_train to a new column labeled "activity_type".
 
-#change 2)
+###change 2)
 the "activity_type" column was an integer, but it represented an activity best described in words. Each number, 1:6 in activity_type was replaced with a character from the activity_labels.txt
 
-#change 3)
+###change 3)
 the subject_train file is not an independent observation, but a variable in the tidy dataset. We moved the data into a new column named "subject"
 
-#change 4)
+###change 4)
 the  data column names were imported from features.txt and applied to the dataset. They were manipulated to make them more readable and more R friendly. They are currently a little large for printing.
 
-#change 5)
+###change 5)
 repeat the above for the "test" dataset
 
-#change 6)
+###change 6)
 merge the "test" and "train" datasets
 
-#change 7)
+###change 7)
 extract only the columns that contain the mean or the standard deviation of a measurement.
 
-#change 8)
+###change 8)
 organize the data so the average for each variable is displayed, organized by each subject and each activity type. eg, show all average accelerations for subject 2 when walking, then all accelerations for subject 2 while standing etc. 
 
 ***********************************************
@@ -45,15 +45,15 @@ organize the data so the average for each variable is displayed, organized by ea
 
 We will describe the first two variables in specific, then describe the remaining 79 variables algorithmically
 
-# [1] "subject"      
+### [1] "subject"      
 
 "subject" is an integer variable (represented as a factor in R) ranges from 1:30 and represents an individual test subject from the original UCI testing. 
  
-# [2] "activity_type"   
+### [2] "activity_type"   
 
 "activity_type" is a character variable (represented as a factor in R) that represents the type of activity being measured. It has 6 possible values: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING,
 
-# [3:81] measurements
+### [3:81] measurements
 
 Each of the remaining 79 variables contain a unitless* mean of a measurement, in the following format:
 
