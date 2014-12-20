@@ -1,13 +1,13 @@
 This codebook is a re-work of the README.txt provided with the UCI HAR dataset. It was written to fulfill the getting and cleaning data coursera class project. This codebook will describe the variables, the data, and any transformations or work performed to clean up the data.
 
-///////////////////////////////////////////////
+***********************************************
 
 Data Background:
 
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec
-///////////////////////////////////////////////
+***********************************************
 
 Data transformations
 
@@ -31,7 +31,7 @@ change 7) extract only the columns that contain the mean or the standard deviati
 
 change 8) organize the data so the average for each variable is displayed, organized by each subject and each activity type. eg, show all average accelerations for subject 2 when walking, then all accelerations for subject 2 while standing etc. 
 
-///////////////////////////////////////////////
+***********************************************
 
 variable description
 
@@ -64,7 +64,7 @@ Vector: direction of the measurement, or possibly the magnitude (euclidean norm)
 
 *see forum thread https://class.coursera.org/getdata-016/forum/thread?thread_id=202
 
-///////////////////////////////////////////////
+***********************************************
 
 Variable list:
 
